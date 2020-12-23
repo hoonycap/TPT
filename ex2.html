@@ -30,22 +30,18 @@
         document.querySelector('body').style.color = 'black';
       ">
 
-      <input id = "night_day" type = "button" name = "한번에 주.야전환" value = "night" onclick = "
-    if(document.querySelector('#night_day').value === 'night' ){
-      document.querySelector('body').style.backgroundColor = 'black';
-      document.querySelector('body').style.color = 'white';
-      document.querySelector('#night_day').value = 'day';
-    }   else  {
-      document.querySelector('body').style.backgroundColor = 'white';
-      document.querySelector('body').style.color = 'black';
-      document.querySelector('#night_day').value = 'night';
-
-    }
-
-
-
-
-      ">
+      <input type="button" name="한번에 주.야전환" value="night" onclick= "
+        var target = document.querySelector('body');
+        if(this.value === 'night' ){
+          target.style.backgroundColor = 'black';
+          target.style.color = 'white';
+          this.value = 'day';
+          }   else  {
+          target.style.backgroundColor = 'white';
+          target.style.color = 'black';
+          this.value = 'night';
+          }
+       ">
 
     <ol>
       <h2 style="background-color:coral; color:powderblue"> 과거 </h2>
@@ -78,7 +74,7 @@
       <p></p>
       12/23
       <br>
-          토글기능  /  if 조건문 (day를 누르면 night로 바뀌고 다시 바뀌는것)  /  else 조건문  / 비교연산자
+          토글기능  /  if 조건문 (day를 누르면 night로 바뀌고 다시 바뀌는것)  /  else 조건문  / 비교연산자  /  리펙토링  /  반복문
       <br>
           연산자는 총 3개가 있음
       <br>
@@ -95,6 +91,34 @@
           <a href="ex3.html">
             <h3><strong> 조건문의 경우</strong></h3>
           </a>
+
+          리펙토링이란
+      <br>
+          코드를 효율적으로 만드는 작업.  /   기존 night 버튼을 글 아래에 하나 더 만든다 ->id를 night_day2로 변경해야한다
+          /  document.querySelector('#night_day') 를 <b>'this'</b>로 변경해준다
+      <br>
+          그다음, id = "night_day2" 이부분도 <b>'this'</b>로 변경해주면 간단히 할 수 있다.
+      <br>
+          document.querySelector('body') 이부분도 줄여줄 수 있다
+          /  <b>var target</b>을 사용해서 전부 target으로 바꿔주면 다 바뀐다.
+      <p>
+      <input type="button" name="한번에 주.야전환" value="night" onclick= "
+        var target = document.querySelector('body');
+        if(this.value === 'night' ){
+          target.style.backgroundColor = 'black';
+          target.style.color = 'white';
+          this.value = 'day';
+          }   else  {
+          target.style.backgroundColor = 'white';
+          target.style.color = 'black';
+          this.value = 'night';
+          }
+       ">
+      </p>
+
+          
+
+
 
   </body>
 </html>
