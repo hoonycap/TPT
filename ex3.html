@@ -18,34 +18,22 @@
 
   <body>
 
-    <h1><a href = "index.html">Twayair</a></h1>
+    <h1><a href="index.html">Twayair</a></h1>
 
-      <input type = "button" name = "주.야전환" value = "night" onclick="
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color = 'white';
+      <input type="button" name="주.야전환" value="night" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+          document.querySelector('body').style.color='white';
       ">
 
-      <input type = "button" name = "주.야전환" value = "day" onclick="
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color = 'black';
+      <input type="button" name="주.야전환" value="day" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
       ">
 
-      <input id = "night_day" type = "button" name = "한번에 주.야전환" value = "night" onclick = "
-    if(document.querySelector('#night_day').value === 'night' ){
-      document.querySelector('body').style.backgroundColor = 'black';
-      document.querySelector('body').style.color = 'white';
-      document.querySelector('#night_day').value = 'day';
-    }   else  {
-      document.querySelector('body').style.backgroundColor = 'white';
-      document.querySelector('body').style.color = 'black';
-      document.querySelector('#night_day').value = 'night';
-
-    }
-
-
-
-
-      ">
+      <!-- 연습으로 돌아가기 버튼을 오른쪽으로 밀면서, 줄바꿈이 되지않게 하려면....?  -->
+      <p align="right">
+      <input type="button" name="연습map" value="연습으로 돌아가기" onclick="location.href='ex2.html'">
+      </p>
 
     <ol>
       <h2 style="background-color:coral; color:powderblue"> 과거 </h2>
@@ -70,12 +58,6 @@
 
       <input type="text" name="인풋의 이름" onkeydown="alert('누르면 내가 나온다는 경고')">
     </p>
-      12/22 콘솔창 활용법
-      <br>
-      div / span 사용  div는 줄바꿈이 있음 / span은 줄바꿈이 없
-      id 로 묶는게 가장 우선  /  class 는 두번째   /  span 으로 묶는게 가장 후 순위
-      <br>
-      <p></p>
       12/23
       <br>
           토글기능  /  if 조건문 (day를 누르면 night로 바뀌고 다시 바뀌는것)  /  else 조건문  / 비교연산자
@@ -86,15 +68,41 @@
       <br>
           이렇게 나온 true와 false를  <b>불리언 데이터 type </b>이라고 한다
       <p>
-          <h3> === </h3>
-          <h3> 1===1 </h3>
-          <script> document.write(1===1); </script>
-          <h4> 1===2 </h4>
-          <script>  document.write(1===2); </script>
       </p>
-          <a href="ex3.html">
-            <h3><strong> 조건문의 경우</strong></h3>
-          </a>
+          <strong> 조건문의 경우</strong>
+      <br>
+          <strong> Program </strong>
+          <br>
+          <script>
+              document.write("1<br>");
+              document.write("2<br>");
+              document.write("3<br>");
+              document.write("4<br>");
+          </script>
 
+          <strong> IF-true </strong> /  if에 있는 값을 넣어주기 때문에 2가 출력
+          <br>
+          <script>
+              document.write("1<br>");
+            if (true) {
+                document.write("2<br>");
+            } else {
+                document.write("3<br>");
+            }
+                document.write("4<br>");
+
+          </script>
+
+          <strong> IF-flase </strong> /  else에 있는 값을 넣어주기 때문에 3이 출력
+          <br>
+          <script>
+              document.write("1<br>");
+            if (false) {
+                document.write("2<br>");
+            } else {
+                document.write("3<br>");
+            }
+                document.write("4<br>");
+          </script>
   </body>
 </html>
