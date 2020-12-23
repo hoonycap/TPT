@@ -30,16 +30,41 @@
         document.querySelector('body').style.color = 'black';
       ">
 
+      <!-- night로 바뀜에 따라서 색도 변하게 하려면 전체 a태그를 다 가져오는 querySelectorAll을 사용해서 var로 배열로 만들어 주고
+        배열로 만든 상태에서는 그 자체를 while 안에서 style태그로 만들어 줄 수 있다
+      -->
+
       <input type="button" name="한번에 주.야전환" value="night" onclick= "
         var target = document.querySelector('body');
         if(this.value === 'night' ){
           target.style.backgroundColor = 'black';
           target.style.color = 'white';
           this.value = 'day';
+
+
+
+          var alist = document.querySelectorAll('a');
+          var i = 0;
+          while( i < alist.length  )
+          {
+            alist[i].style.color = 'powderblue';
+            i = i + 1;
+          }
+
           }   else  {
           target.style.backgroundColor = 'white';
           target.style.color = 'black';
           this.value = 'night';
+
+          var alist = document.querySelectorAll('a');
+          var i = 0;
+          while( i < alist.length  )
+          {
+            alist[i].style.color = 'blue';
+            i = i + 1;
+          }
+
+
           }
        ">
 
@@ -115,7 +140,7 @@
           }
        ">
       </p>
-          반복문은 var에 a태그를 link걸어서 night나 day로 변경시 자동으로 값이 변하도록 만드는것
+          반복문(loop)은 var에 a태그를 link걸어서 night나 day로 변경시 자동으로 값이 변하도록 만드는것
       <br>
           var로 묶은 배열의 필요성은 [] 대괄호를 사용하고 콤마(,)로 표시한다.
           /  이럴때 document.write()를 사용해서 분류랑 순서에 맞는 숫자를 넣으면 출력된다
@@ -139,6 +164,73 @@
           document.write(airline.length);
       </script>
 
+      <p>
+        <strong> while 반복실행 </strong>
+      <br>
+          var은 변수
+          while (i < 3 ) {}
+      <br>
+          var i = 0;이라고 하고 / 반복을 시키고 싶은 구간의 마지막에  /  i = i + 1 라고 쓴다면,
+      <br>
+          while ()값에 넣은 조건에 따라 false로 나오기 전까지 반복된다. < 3 이므로
+      </p>
+      <script>
+          document.write('<li>1</li>');
+          var i = 0
+          while(i<3){
+          document.write('<li>2</li>');
+          document.write('<li>3</li>');
+          i = i + 1;
+
+          }
+          document.write('<li>4</li>');
+      </script>
+      <br>
+          이렇게 나오게 된다.
+      <p>
+          <strong>그렇다면 좀전에 썼던  배열을 사용한다면...??!</strong>
+      </p>
+          script 를 사용해서 airline['jeju', 'airbusan'] 을 하나 만들고
+      <br>
+          script 를 하나 더 사용해서
+      <br>
+          var은 변수 <br>
+          while (i < airline.length ) { <br>
+            document.write('li> '+ airline[i] +' /li>'); <br>
+          } 으로 만들어주면 ,  /  airline 안에 있는 것들이 나오게 된다
+
+      <script>
+        var airline = ["jeju", "airbusan", "Twayair"]
+      </script>
+
+      <script>
+        var i = 0
+        while( i < airline.length ){
+          document.write('<li>'+airline[i]+'</li>');
+          i = i + 1
+        }
+
+      </script>
+      <p>
+          'li' 사이에 a태그로 href를 넣어서 사이트를 넣는경우
+      </p>
+      <br>
+          a.gw.com/( 이 자리에 airline 소속글씨가  ) 오게되어 이름을 클릭할때 각각의 사이트로 갈 수 있다.
+
+          <script>
+            var airline = ["jeju", "airbusan", "Twayair"]
+          </script>
+
+        <script>
+          var i = 0
+          while( i < airline.length ){
+            document.write('<li><a href="http://gw.com/'+airline[i]+'">' +airline[i]+'</a></li>');
+            i = i + 1
+          }
+
+        </script>
+        <br>
+            절대 기존의 +airline[i]+ 를 빼먹으면 안댄다
 
 
 
