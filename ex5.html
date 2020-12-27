@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+
+<!-- target을 document querySelector로 바꿔야 이게 적용된다-->
+    <script>
+
+    function BodySetColor(color){
+      document.querySelector('body').style.Color = color;
+    }
+
+    function BodySetBackgroundColor(color){
+      document.querySelector('body').style.backgroundColor = color;
+
+    }
+
+    function LinksSetColor(color){
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while( i < alist.length  )
+      {
+        alist[i].style.color = color;
+        i = i + 1;
+      }
+    }
+
+
+    function nightDayHandler(self){
+
+      var target = document.querySelector('body');
+      if(self.value === 'night' ){
+        Body.setBackgroundColor ('black');
+        Body.setColor ('white');
+        self.value = 'day';
+
+        Links.setColor('powderblue');
+
+        }   else  {
+        Body.setBackgroundColor ('white');
+        Body.setColor ('black');
+        self.value = 'night';
+        Links.setColor('blue');
+        }
+    }
+
+    </script>
+    <!-- Body .  이런식으로 객체를 묶어준거고,  BodySetColor이런 식이였던걸 Body로 묶으면 Body.set~~ 처럼 S를 소문자로 바꿔야한다-->
+
+  </head>
+
+
+
+
+  <body>
+
+  <h1><a href = "index.html">Twayair</a></h1>
+
+  <!-- night로 바뀜에 따라서 색도 변하게 하려면 전체 a태그를 다 가져오는 querySelectorAll을 사용해서 var로 배열로 만들어 주고
+        배열로 만든 상태에서는 그 자체를 while 안에서 style태그로 만들어 줄 수 있다
+      -->
+
+
+
+  <input type="button" name="한번에 주.야전환" value="night" onclick="
+  nightDayHandler(this)
+   ">
+
+     <ol>
+       <h2 style="background-color:coral; color:powderblue"> JAVA script 객체  </h2>
+
+     </ol>
+
+          12/27
+      <br>
+          객체 역시 정리정돈의 수단  /  연관된 함수를 묶어주는 도구
+      <br>
+          위에 있는 input을 구성하는데 중복되는 부분이 다음과 같이 있다
+      <br>
+            var alist = document.querySelectorAll('a');
+      <br>
+            var i = 0;
+      <br>
+            while( i < alist.length  )
+      <br>
+            { alist[i].style.color = 'blue';
+      <br>
+              i = i + 1; }
+      <br>
+          이걸  함수로 독립시길것이다
+<br>
+    function setColor(color){} 로 묶어준다음 기존에 있던 자리에는 setColor('powerblue'); 로 만들면 기존과 동일한 변화를 줄 수 있다.
+<br>
+    <b>근데 똑같은 setColor로 반복했을 경우 가장 아래에 있는 효과가 덮어쓰기로 적용되버린다.</b>
+<br>
+    그래서 어떤건 setColor  /  어떤건 bodyColor 이런식으로 다르게 표현해주면 각각을 별도로 통일해서 적용할 수 있다.
+<br>
+<br>
+    <a href="ex6.html"><strong>객체를 이용한 연습, 및 수업내용 정리<strong></a>
+      <br>
+          <input type="button" name="한번에 주.야전환" value="night" onclick="
+            nightDayHandler(this)
+           ">
+<!-- 일단 이거 실패.... 색은 바뀌는데, night가 day로 바뀌지않음....
+그것은 우리가 기존에 input 태그를 지칭하도록 적은게 'this'였는데  이게 script로 빠지면서 input태그를 지칭하지 못하게 되었기 때문이다
+따라서 기존에 우리가 넣은  this를 'self' 로 변경시켜서 다시 지칭할 수 있도록 해야한다.
+이런식으로 라면 버튼을 몇만개든 다 만들 수 있고 다 같은 기능을 하게 할 수 있다.
+-->
+
+      <br>
+
+      <br>
+
+
+
+
+
+
+
+     <p align="center">
+     <input type="button" name="연습map" value="1" onclick="location.href='ex2.html'">
+     <input type="button" name="연습map" value="2" onclick="location.href='ex4.html'">
+     </p>
+
+  </body>
+</html>
