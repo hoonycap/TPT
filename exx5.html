@@ -5,57 +5,8 @@
     <title></title>
 
 
-<!--ex4를 객체를 이용해서 더 간략화 시킴 /// target을 document querySelector로 바꿔야 이게 적용된다-->
-    <script>
+    <script src="colors.js"></script>
 
-    var Body = {
-      setColor:function(color){
-        document.querySelector('body').style.color = color;
-        },
-
-      setBackgroundColor:function(color){
-        document.querySelector('body').style.backgroundColor = color;
-        }
-      }
-
-    var Links = {
-      setColor:function(color){
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        while( i < alist.length  )
-          {
-          alist[i].style.color = color;
-          i = i + 1;
-          }
-        }
-    }
-
-  
-    function nightDayHandler(self){
-
-      var target = document.querySelector('body');
-      if(self.value === 'night' ){
-        Body.setColor ('white');
-        Body.setBackgroundColor ('black');
-        self.value = 'day';
-
-        Links.setColor('powderblue');
-
-        }   else  {
-        Body.setColor ('black');
-        Body.setBackgroundColor ('white');
-        self.value = 'night';
-
-        Links.setColor('blue');
-        }
-    }
-
-    </script>
-    <!-- Body .  이런식으로 객체를 묶어준거고,  BodySetColor이런 식이였던걸 Body로 묶으면 Body.set~~ 처럼 S를 소문자로 바꿔야한다
-
-!!!!  맨 위의 function을 조정해주지 않으면 실행되지 않는다!!!!!!!!!!
-
-  -->
 
   </head>
 
@@ -104,7 +55,7 @@
     그래서 어떤건 setColor  /  어떤건 bodyColor 이런식으로 다르게 표현해주면 각각을 별도로 통일해서 적용할 수 있다.
 <br>
 <br>
-    <a href="ex6.html"><strong>객체를 이용한 연습, 및 수업내용 정리<strong></a>(클릭)
+    <a href="exx6.html"><strong>객체를 이용한 연습, 및 수업내용 정리<strong></a>(클릭)
       <br>
           <input type="button" name="한번에 주.야전환" value="night" onclick="
             nightDayHandler(this)
@@ -139,10 +90,10 @@
 
 
      <p align="center">
-     <input type="button" name="연습map" value="1" onclick="location.href='ex2.html'">
-     <input type="button" name="연습map" value="2" onclick="location.href='ex4.html'">
-     <input type="button" name="연습map" value="3" onclick="location.href='ex5.html'">
-     <input type="button" name="연습map" value="4" onclick="location.href='ex7.html'">
+     <input type="button" name="연습map" value="1" onclick="location.href='exx2.html'">
+     <input type="button" name="연습map" value="2" onclick="location.href='exx4.html'">
+     <input type="button" name="연습map" value="3" onclick="location.href='exx5.html'">
+     <input type="button" name="연습map" value="4" onclick="location.href='exx7.html'">
      </p>
 
   </body>

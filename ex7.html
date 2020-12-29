@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+
+    <script>
+
+    function BodySetColor(color){
+      document.querySelector('body').style.Color = color;
+    }
+
+    function BodySetBackgroundColor(color){
+      document.querySelector('body').style.backgroundColor = color;
+
+    }
+
+    function LinksSetColor(color){
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while( i < alist.length  )
+      {
+        alist[i].style.color = color;
+        i = i + 1;
+      }
+    }
+
+
+    function nightDayHandler(self){
+
+      var target = document.querySelector('body');
+      if(self.value === 'night' ){
+        Body.setBackgroundColor ('black');
+        Body.setColor ('white');
+        self.value = 'day';
+
+        Links.setColor('powderblue');
+
+        }   else  {
+        Body.setBackgroundColor ('white');
+        Body.setColor ('black');
+        self.value = 'night';
+        Links.setColor('blue');
+        }
+    }
+
+    </script>
+
+
+  </head>
+
+
+
+
+  <body>
+
+  <h1><a href = "index.html">Twayair</a></h1>
+
+
+
+  <input type="button" name="한번에 주.야전환" value="night" onclick="
+  nightDayHandler(this)
+   ">
+
+
+<p>12/29</p>
+
+
+<h2 style="background-color:coral; color:powderblue"> JAVA script 활용  </h2>
+
+    <br>
+        지금까지 우리가 각 페이지에 넣었던 [Night & Day] 전환 버튼을 ex 4,5,6,7 에 모두 넣어보려고 한다.
+    <br>
+        원래 같았다면 전부다 복사해 모든 html파일에 넣어야 했지만.  scr 파일을 이용해서 만들 수 있다.
+    <br>
+        <h2><a href = "exx2.html">같은 결과, 다른 구조 확인하러 가기</a></h2>
+    <br>
+
+    <br>
+
+
+<h3>우리가 기존에 a 태그에 만든 링크 색을 전부 yellow로 수정하기</h3>
+
+    <p>
+        1. 파일로 쪼개 = colors.js 라는 파일 만들기
+    </p>
+
+        중복되는 코드들이 있는 곳에서 script 태그를 제외하고 color.js로 붙여넣기하고 'yellow'로 수정한 다음  ///
+          script src="colors.js" 라고 붙여준다
+    <br>
+        <u>이전과 같이 동작 하지만  내부적인 동작은 파일로 쪼개진 상태....!!</u>
+    <br>
+        <u>따라서 colors.js 에 있는것만 변경하면 모든 exx.html 파일에 동일하게 적용이 된다.</u>
+
+
+
+
+     <p align="center">
+     <input type="button" name="연습map" value="1" onclick="location.href='ex2.html'">
+     <input type="button" name="연습map" value="2" onclick="location.href='ex4.html'">
+     <input type="button" name="연습map" value="3" onclick="location.href='ex5.html'">
+     <input type="button" name="연습map" value="4" onclick="location.href='ex7.html'">
+     </p>
+
+  </body>
+</html>

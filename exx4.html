@@ -4,43 +4,7 @@
     <meta charset="utf-8">
     <title></title>
 
-    <script>
-
-    function nightDayHandler(self){
-
-      var target = document.querySelector('body');
-      if(self.value === 'night' ){
-        target.style.backgroundColor = 'black';
-        target.style.color = 'white';
-        self.value = 'day';
-
-
-
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        while( i < alist.length  )
-        {
-          alist[i].style.color = 'powderblue';
-          i = i + 1;
-        }
-
-        }   else  {
-        target.style.backgroundColor = 'white';
-        target.style.color = 'black';
-        self.value = 'night';
-
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        while( i < alist.length  )
-        {
-          alist[i].style.color = 'blue';
-          i = i + 1;
-        }
-      }
-    }
-
-    </script>
-
+  <script src="colors.js"></script>
 
   </head>
 
@@ -51,16 +15,9 @@
 
   <h1><a href = "index.html">Twayair</a></h1>
 
-  <!-- night로 바뀜에 따라서 색도 변하게 하려면 전체 a태그를 다 가져오는 querySelectorAll을 사용해서 var로 배열로 만들어 주고
-        배열로 만든 상태에서는 그 자체를 while 안에서 style태그로 만들어 줄 수 있다
-      -->
-
-
-
   <input type="button" name="한번에 주.야전환" value="night" onclick="
   nightDayHandler(this)
    ">
-
      <ol>
        <h2 style="background-color:coral; color:powderblue"> 과거 </h2>
 
@@ -82,11 +39,7 @@
           <input type="button" name="한번에 주.야전환" value="night" onclick="
             nightDayHandler(this)
            ">
-<!-- 일단 이거 실패.... 색은 바뀌는데, night가 day로 바뀌지않음....
-그것은 우리가 기존에 input 태그를 지칭하도록 적은게 'this'였는데  이게 script로 빠지면서 input태그를 지칭하지 못하게 되었기 때문이다
-따라서 기존에 우리가 넣은  this를 'self' 로 변경시켜서 다시 지칭할 수 있도록 해야한다.
-이런식으로 라면 버튼을 몇만개든 다 만들 수 있고 다 같은 기능을 하게 할 수 있다.
--->
+
 
       <br>
           함수를 이용한 반복문
@@ -104,7 +57,7 @@
       <br>
           이렇게 중간꺼를 반복시키고자 할때, function을 사용할 수있다
       <br>
-    <ul> <!--왜 여기서 ul을 쓰지...? -->
+    <ul>
       <script>
         function two(){
           document.write('<li>2-1</li>');
@@ -174,10 +127,10 @@
 
 
      <p align="center">
-       <input type="button" name="연습map" value="1" onclick="location.href='ex2.html'">
-       <input type="button" name="연습map" value="2" onclick="location.href='ex4.html'">
-       <input type="button" name="연습map" value="3" onclick="location.href='ex5.html'">
-       <input type="button" name="연습map" value="4" onclick="location.href='ex7.html'">
+       <input type="button" name="연습map" value="1" onclick="location.href='exx2.html'">
+       <input type="button" name="연습map" value="2" onclick="location.href='exx4.html'">
+       <input type="button" name="연습map" value="3" onclick="location.href='exx5.html'">
+       <input type="button" name="연습map" value="4" onclick="location.href='exx7.html'">
      </p>
 
   </body>

@@ -10,7 +10,7 @@
         }
 
       </style>
-
+      <script src="colors.js"></script>
 
   </head>
 
@@ -20,52 +20,9 @@
 
     <h1><a href = "index.html">Twayair</a></h1>
 
-      <input type = "button" name = "주.야전환" value = "night" onclick="
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color = 'white';
-      ">
-
-      <input type = "button" name = "주.야전환" value = "day" onclick="
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color = 'black';
-      ">
-
-      <!-- night로 바뀜에 따라서 색도 변하게 하려면 전체 a태그를 다 가져오는 querySelectorAll을 사용해서 var로 배열로 만들어 주고
-            배열로 만든 상태에서는 그 자체를 while 안에서 style태그로 만들어 줄 수 있다
-          -->
-      <input type="button" name="한번에 주.야전환" value="night" onclick="
-        var target = document.querySelector('body');
-        if(this.value === 'night' ){
-          target.style.backgroundColor = 'black';
-          target.style.color = 'white';
-          this.value = 'day';
-
-
-
-          var alist = document.querySelectorAll('a');
-          var i = 0;
-          while( i < alist.length  )
-          {
-            alist[i].style.color = 'powderblue';
-            i = i + 1;
-          }
-
-          }   else  {
-          target.style.backgroundColor = 'white';
-          target.style.color = 'black';
-          this.value = 'night';
-
-          var alist = document.querySelectorAll('a');
-          var i = 0;
-          while( i < alist.length  )
-          {
-            alist[i].style.color = 'blue';
-            i = i + 1;
-          }
-
-
-          }
-       ">
+    <input type="button" name="한번에 주.야전환" value="night" onclick="
+    nightDayHandler(this)
+     ">
 
 <h2 style="background-color:coral; color:powderblue"> 과거 </h2>
 
@@ -109,7 +66,7 @@
           <h4> 1===2 </h4>
           <script>  document.write(1===2); </script>
       </p>
-          <a href="ex3.html">
+          <a href="exx3.html">
             <h3><strong> 조건문의 경우</strong></h3>
           </a>
 
@@ -233,10 +190,10 @@
 
 
           <p align="center">
-          <input type="button" name="연습map" value="1" onclick="location.href='ex2.html'">
-          <input type="button" name="연습map" value="2" onclick="location.href='ex4.html'">
-          <input type="button" name="연습map" value="3" onclick="location.href='ex5.html'">
-          <input type="button" name="연습map" value="4" onclick="location.href='ex7.html'">
+          <input type="button" name="연습map" value="1" onclick="location.href='exx2.html'">
+          <input type="button" name="연습map" value="2" onclick="location.href='exx4.html'">
+          <input type="button" name="연습map" value="3" onclick="location.href='exx5.html'">
+          <input type="button" name="연습map" value="4" onclick="location.href='exx7.html'">
           </p>
 
 
